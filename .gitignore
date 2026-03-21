@@ -1,0 +1,12 @@
+.venv/
+.python_packages/
+.tmp/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+sample_response.json
+bin/
+obj/
+.vs/

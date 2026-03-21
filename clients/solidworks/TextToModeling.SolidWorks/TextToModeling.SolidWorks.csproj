@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>TextToModeling.SolidWorks</AssemblyName>
+    <RootNamespace>TextToModeling.SolidWorks</RootNamespace>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="SolidWorks.Interop.sldworks" />
+    <Reference Include="SolidWorks.Interop.swconst" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+</Project>

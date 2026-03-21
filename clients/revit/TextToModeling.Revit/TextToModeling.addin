@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Name>TextToModeling</Name>
+    <Assembly>C:\Path\To\TextToModeling.Revit.dll</Assembly>
+    <AddInId>1B3A3A8C-2A7D-4309-A0A3-95A0B8FC2A6B</AddInId>
+    <FullClassName>TextToModeling.Revit.GenerateMeshCommand</FullClassName>
+    <VendorId>TTM</VendorId>
+    <VendorDescription>Text to modeling demo for Revit 2023.</VendorDescription>
+  </AddIn>
+</RevitAddIns>
