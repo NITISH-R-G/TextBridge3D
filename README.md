@@ -376,3 +376,105 @@ Skills used during the process:
 - [app/main.py](C:\Users\nitis\OneDrive\Documents\Architecture Neon task\app\main.py)
 - [app/generators.py](C:\Users\nitis\OneDrive\Documents\Architecture Neon task\app\generators.py)
 - [app/schemas.py](C:\Users\nitis\OneDrive\Documents\Architecture Neon task\app\schemas.py)
+
+<!-- AUTO-GENERATED-START -->
+## System Architecture
+```mermaid
+graph TD
+    User([User])
+
+    subgraph Clients["Clients / Adapters"]
+        sketchup["Sketchup Plugin"]
+        revit["Revit Plugin"]
+        solidworks["Solidworks Plugin"]
+    end
+
+    subgraph Services["Services"]
+        app["App Service"]
+    end
+
+    User -->|Prompts| Clients
+    sketchup -->|HTTP POST| app
+    revit -->|HTTP POST| app
+    solidworks -->|HTTP POST| app
+```
+
+
+## Technology Stack
+```mermaid
+mindmap
+  root((Project))
+    Backend
+      Python
+        fastapi
+        uvicorn[standard]
+        pydantic
+    Clients
+      C#
+        RevitAPI
+        RevitAPIUI
+        System.Net.Http
+        SolidWorks.Interop.sldworks
+        SolidWorks.Interop.swconst
+      Ruby
+        SketchUp API
+```
+
+
+### Identified Languages and Frameworks
+- **Languages**: Python, Ruby, C#
+- **Frameworks**: FastAPI, Pydantic
+
+## Generated Repository Structure
+```text
+.gitignore
+sample_response.json
+requirements.txt
+repo_knowledge_graph.json
+README.md
+examples/
+  cube-request.json
+  cylinder-request.json
+app/
+  main.py
+  schemas.py
+  __init__.py
+  generators.py
+app/__pycache__/
+  __init__.cpython-312.pyc
+  generators.cpython-312.pyc
+  schemas.cpython-312.pyc
+  main.cpython-312.pyc
+scripts/
+  smoke_test.py
+scripts/automation/
+  generate_readme.py
+  ai_agent.py
+  analyze_repo.py
+  generate_diagrams.py
+clients/
+  README.md
+clients/sketchup/
+  text_to_modeling.rb
+clients/sketchup/text_to_modeling/
+  main.rb
+clients/revit/
+clients/revit/TextToModeling.Revit/
+  GenerateMeshCommand.cs
+  RevitMeshBuilder.cs
+  TextToModeling.Revit.csproj
+  PromptWindow.xaml.cs
+  Models.cs
+  TextToModeling.addin
+  FastApiClient.cs
+  PromptWindow.xaml
+clients/solidworks/
+clients/solidworks/TextToModeling.SolidWorks/
+  SolidWorksAddIn.cs
+  TaskpaneControl.cs
+  TextToModeling.SolidWorks.csproj
+  Models.cs
+  FastApiClient.cs
+```
+
+<!-- AUTO-GENERATED-END -->
