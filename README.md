@@ -384,9 +384,9 @@ graph TD
     User([User])
 
     subgraph Clients["Clients / Adapters"]
-        sketchup["Sketchup Plugin"]
         revit["Revit Plugin"]
         solidworks["Solidworks Plugin"]
+        sketchup["Sketchup Plugin"]
     end
 
     subgraph Services["Services"]
@@ -394,9 +394,9 @@ graph TD
     end
 
     User -->|Prompts| Clients
-    sketchup -->|HTTP POST| app
     revit -->|HTTP POST| app
     solidworks -->|HTTP POST| app
+    sketchup -->|HTTP POST| app
 ```
 
 
@@ -422,59 +422,53 @@ mindmap
 
 
 ### Identified Languages and Frameworks
-- **Languages**: Python, Ruby, C#
+- **Languages**: Python, C#, Ruby
 - **Frameworks**: FastAPI, Pydantic
 
 ## Generated Repository Structure
 ```text
 .gitignore
-sample_response.json
 requirements.txt
-repo_knowledge_graph.json
 README.md
-examples/
-  cube-request.json
-  cylinder-request.json
+repo_knowledge_graph.json
+scripts/
+  smoke_test.py
+scripts/automation/
+  generate_diagrams.py
+  generate_readme.py
+  ai_agent.py
+  analyze_repo.py
 app/
   main.py
   schemas.py
   __init__.py
   generators.py
-app/__pycache__/
-  __init__.cpython-312.pyc
-  generators.cpython-312.pyc
-  schemas.cpython-312.pyc
-  main.cpython-312.pyc
-scripts/
-  smoke_test.py
-scripts/automation/
-  generate_readme.py
-  ai_agent.py
-  analyze_repo.py
-  generate_diagrams.py
 clients/
   README.md
+clients/revit/
+clients/revit/TextToModeling.Revit/
+  TextToModeling.addin
+  TextToModeling.Revit.csproj
+  PromptWindow.xaml.cs
+  Models.cs
+  GenerateMeshCommand.cs
+  FastApiClient.cs
+  PromptWindow.xaml
+  RevitMeshBuilder.cs
+clients/solidworks/
+clients/solidworks/TextToModeling.SolidWorks/
+  SolidWorksAddIn.cs
+  TextToModeling.SolidWorks.csproj
+  Models.cs
+  TaskpaneControl.cs
+  FastApiClient.cs
 clients/sketchup/
   text_to_modeling.rb
 clients/sketchup/text_to_modeling/
   main.rb
-clients/revit/
-clients/revit/TextToModeling.Revit/
-  GenerateMeshCommand.cs
-  RevitMeshBuilder.cs
-  TextToModeling.Revit.csproj
-  PromptWindow.xaml.cs
-  Models.cs
-  TextToModeling.addin
-  FastApiClient.cs
-  PromptWindow.xaml
-clients/solidworks/
-clients/solidworks/TextToModeling.SolidWorks/
-  SolidWorksAddIn.cs
-  TaskpaneControl.cs
-  TextToModeling.SolidWorks.csproj
-  Models.cs
-  FastApiClient.cs
+examples/
+  cube-request.json
+  cylinder-request.json
 ```
 
 <!-- AUTO-GENERATED-END -->
