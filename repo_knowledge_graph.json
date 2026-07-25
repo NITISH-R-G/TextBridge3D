@@ -4,8 +4,8 @@
     "Pydantic"
   ],
   "languages": [
-    "Ruby",
     "C#",
+    "Ruby",
     "Python"
   ],
   "dependencies": {
@@ -15,11 +15,11 @@
       "pydantic"
     ],
     "csharp": [
-      "RevitAPI",
-      "RevitAPIUI",
-      "System.Net.Http",
       "SolidWorks.Interop.sldworks",
-      "SolidWorks.Interop.swconst"
+      "SolidWorks.Interop.swconst",
+      "System.Net.Http",
+      "RevitAPI",
+      "RevitAPIUI"
     ],
     "ruby": []
   },
@@ -27,19 +27,31 @@
     "app"
   ],
   "clients": [
+    "solidworks",
     "sketchup",
-    "revit",
-    "solidworks"
+    "revit"
   ],
   "directories": {
     "/": [
+      "requirements.txt",
       "repo_knowledge_graph.json",
-      ".gitignore",
       "README.md",
-      "requirements.txt"
+      ".gitignore"
+    ],
+    "examples": [
+      "cube-request.json",
+      "cylinder-request.json"
     ],
     "clients": [
       "README.md"
+    ],
+    "clients/solidworks": [],
+    "clients/solidworks/TextToModeling.SolidWorks": [
+      "SolidWorksAddIn.cs",
+      "FastApiClient.cs",
+      "TextToModeling.SolidWorks.csproj",
+      "TaskpaneControl.cs",
+      "Models.cs"
     ],
     "clients/sketchup": [
       "text_to_modeling.rb"
@@ -49,41 +61,29 @@
     ],
     "clients/revit": [],
     "clients/revit/TextToModeling.Revit": [
-      "RevitMeshBuilder.cs",
       "TextToModeling.Revit.csproj",
-      "PromptWindow.xaml",
-      "Models.cs",
       "GenerateMeshCommand.cs",
+      "PromptWindow.xaml",
+      "FastApiClient.cs",
       "TextToModeling.addin",
-      "FastApiClient.cs",
-      "PromptWindow.xaml.cs"
-    ],
-    "clients/solidworks": [],
-    "clients/solidworks/TextToModeling.SolidWorks": [
+      "RevitMeshBuilder.cs",
       "Models.cs",
-      "TextToModeling.SolidWorks.csproj",
-      "SolidWorksAddIn.cs",
-      "FastApiClient.cs",
-      "TaskpaneControl.cs"
+      "PromptWindow.xaml.cs"
     ],
     "scripts": [
       "smoke_test.py"
     ],
     "scripts/automation": [
+      "ai_agent.py",
       "generate_diagrams.py",
       "generate_readme.py",
-      "ai_agent.py",
       "analyze_repo.py"
-    ],
-    "examples": [
-      "cube-request.json",
-      "cylinder-request.json"
     ],
     "app": [
       "main.py",
-      "schemas.py",
       "generators.py",
-      "__init__.py"
+      "__init__.py",
+      "schemas.py"
     ]
   }
 }
