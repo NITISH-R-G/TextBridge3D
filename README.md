@@ -384,9 +384,9 @@ graph TD
     User([User])
 
     subgraph Clients["Clients / Adapters"]
+        solidworks["Solidworks Plugin"]
         sketchup["Sketchup Plugin"]
         revit["Revit Plugin"]
-        solidworks["Solidworks Plugin"]
     end
 
     subgraph Services["Services"]
@@ -394,9 +394,9 @@ graph TD
     end
 
     User -->|Prompts| Clients
+    solidworks -->|HTTP POST| app
     sketchup -->|HTTP POST| app
     revit -->|HTTP POST| app
-    solidworks -->|HTTP POST| app
 ```
 
 
@@ -411,64 +411,64 @@ mindmap
         pydantic
     Clients
       C#
-        RevitAPI
-        RevitAPIUI
-        System.Net.Http
         SolidWorks.Interop.sldworks
         SolidWorks.Interop.swconst
+        System.Net.Http
+        RevitAPI
+        RevitAPIUI
       Ruby
         SketchUp API
 ```
 
 
 ### Identified Languages and Frameworks
-- **Languages**: Python, Ruby, C#
+- **Languages**: C#, Ruby, Python
 - **Frameworks**: FastAPI, Pydantic
 
 ## Generated Repository Structure
 ```text
 requirements.txt
+repo_knowledge_graph.json
 README.md
 .gitignore
-repo_knowledge_graph.json
 examples/
-  cylinder-request.json
   cube-request.json
-scripts/
-  smoke_test.py
-scripts/automation/
-  ai_agent.py
-  analyze_repo.py
-  generate_diagrams.py
-  generate_readme.py
-app/
-  __init__.py
-  schemas.py
-  main.py
-  generators.py
+  cylinder-request.json
 clients/
   README.md
+clients/solidworks/
+clients/solidworks/TextToModeling.SolidWorks/
+  SolidWorksAddIn.cs
+  FastApiClient.cs
+  TextToModeling.SolidWorks.csproj
+  TaskpaneControl.cs
+  Models.cs
 clients/sketchup/
   text_to_modeling.rb
 clients/sketchup/text_to_modeling/
   main.rb
 clients/revit/
 clients/revit/TextToModeling.Revit/
+  TextToModeling.Revit.csproj
   GenerateMeshCommand.cs
   PromptWindow.xaml
+  FastApiClient.cs
+  TextToModeling.addin
+  RevitMeshBuilder.cs
   Models.cs
   PromptWindow.xaml.cs
-  TextToModeling.addin
-  FastApiClient.cs
-  TextToModeling.Revit.csproj
-  RevitMeshBuilder.cs
-clients/solidworks/
-clients/solidworks/TextToModeling.SolidWorks/
-  SolidWorksAddIn.cs
-  Models.cs
-  TaskpaneControl.cs
-  TextToModeling.SolidWorks.csproj
-  FastApiClient.cs
+scripts/
+  smoke_test.py
+scripts/automation/
+  ai_agent.py
+  generate_diagrams.py
+  generate_readme.py
+  analyze_repo.py
+app/
+  main.py
+  generators.py
+  __init__.py
+  schemas.py
 ```
 
 <!-- AUTO-GENERATED-END -->
