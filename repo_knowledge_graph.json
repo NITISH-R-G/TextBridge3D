@@ -4,9 +4,9 @@
     "Pydantic"
   ],
   "languages": [
+    "Python",
     "C#",
-    "Ruby",
-    "Python"
+    "Ruby"
   ],
   "dependencies": {
     "python": [
@@ -15,11 +15,11 @@
       "pydantic"
     ],
     "csharp": [
-      "SolidWorks.Interop.sldworks",
-      "SolidWorks.Interop.swconst",
-      "System.Net.Http",
       "RevitAPI",
-      "RevitAPIUI"
+      "RevitAPIUI",
+      "System.Net.Http",
+      "SolidWorks.Interop.sldworks",
+      "SolidWorks.Interop.swconst"
     ],
     "ruby": []
   },
@@ -27,31 +27,49 @@
     "app"
   ],
   "clients": [
-    "solidworks",
+    "revit",
     "sketchup",
-    "revit"
+    "solidworks"
   ],
   "directories": {
     "/": [
-      "requirements.txt",
-      "repo_knowledge_graph.json",
+      ".gitignore",
       "README.md",
-      ".gitignore"
+      "requirements.txt",
+      "repo_knowledge_graph.json"
+    ],
+    "app": [
+      "__init__.py",
+      "main.py",
+      "schemas.py",
+      "generators.py"
     ],
     "examples": [
       "cube-request.json",
       "cylinder-request.json"
     ],
+    "scripts": [
+      "smoke_test.py"
+    ],
+    "scripts/automation": [
+      "ai_agent.py",
+      "generate_readme.py",
+      "generate_diagrams.py",
+      "analyze_repo.py"
+    ],
     "clients": [
       "README.md"
     ],
-    "clients/solidworks": [],
-    "clients/solidworks/TextToModeling.SolidWorks": [
-      "SolidWorksAddIn.cs",
+    "clients/revit": [],
+    "clients/revit/TextToModeling.Revit": [
+      "GenerateMeshCommand.cs",
+      "TextToModeling.addin",
+      "Models.cs",
+      "TextToModeling.Revit.csproj",
+      "PromptWindow.xaml.cs",
       "FastApiClient.cs",
-      "TextToModeling.SolidWorks.csproj",
-      "TaskpaneControl.cs",
-      "Models.cs"
+      "RevitMeshBuilder.cs",
+      "PromptWindow.xaml"
     ],
     "clients/sketchup": [
       "text_to_modeling.rb"
@@ -59,31 +77,13 @@
     "clients/sketchup/text_to_modeling": [
       "main.rb"
     ],
-    "clients/revit": [],
-    "clients/revit/TextToModeling.Revit": [
-      "TextToModeling.Revit.csproj",
-      "GenerateMeshCommand.cs",
-      "PromptWindow.xaml",
-      "FastApiClient.cs",
-      "TextToModeling.addin",
-      "RevitMeshBuilder.cs",
+    "clients/solidworks": [],
+    "clients/solidworks/TextToModeling.SolidWorks": [
+      "TaskpaneControl.cs",
       "Models.cs",
-      "PromptWindow.xaml.cs"
-    ],
-    "scripts": [
-      "smoke_test.py"
-    ],
-    "scripts/automation": [
-      "ai_agent.py",
-      "generate_diagrams.py",
-      "generate_readme.py",
-      "analyze_repo.py"
-    ],
-    "app": [
-      "main.py",
-      "generators.py",
-      "__init__.py",
-      "schemas.py"
+      "SolidWorksAddIn.cs",
+      "TextToModeling.SolidWorks.csproj",
+      "FastApiClient.cs"
     ]
   }
 }
