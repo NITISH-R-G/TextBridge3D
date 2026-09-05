@@ -384,9 +384,9 @@ graph TD
     User([User])
 
     subgraph Clients["Clients / Adapters"]
-        revit["Revit Plugin"]
-        sketchup["Sketchup Plugin"]
         solidworks["Solidworks Plugin"]
+        sketchup["Sketchup Plugin"]
+        revit["Revit Plugin"]
     end
 
     subgraph Services["Services"]
@@ -394,9 +394,9 @@ graph TD
     end
 
     User -->|Prompts| Clients
-    revit -->|HTTP POST| app
-    sketchup -->|HTTP POST| app
     solidworks -->|HTTP POST| app
+    sketchup -->|HTTP POST| app
+    revit -->|HTTP POST| app
 ```
 
 
@@ -411,64 +411,64 @@ mindmap
         pydantic
     Clients
       C#
-        RevitAPI
-        RevitAPIUI
-        System.Net.Http
         SolidWorks.Interop.sldworks
         SolidWorks.Interop.swconst
+        System.Net.Http
+        RevitAPI
+        RevitAPIUI
       Ruby
         SketchUp API
 ```
 
 
 ### Identified Languages and Frameworks
-- **Languages**: Python, C#, Ruby
+- **Languages**: C#, Ruby, Python
 - **Frameworks**: FastAPI, Pydantic
 
 ## Generated Repository Structure
 ```text
+requirements.txt
 .gitignore
 README.md
-requirements.txt
 repo_knowledge_graph.json
-app/
-  __init__.py
-  main.py
-  schemas.py
-  generators.py
-examples/
-  cube-request.json
-  cylinder-request.json
-scripts/
-  smoke_test.py
-scripts/automation/
-  ai_agent.py
-  generate_readme.py
-  generate_diagrams.py
-  analyze_repo.py
 clients/
   README.md
-clients/revit/
-clients/revit/TextToModeling.Revit/
-  GenerateMeshCommand.cs
-  TextToModeling.addin
-  Models.cs
-  TextToModeling.Revit.csproj
-  PromptWindow.xaml.cs
+clients/solidworks/
+clients/solidworks/TextToModeling.SolidWorks/
+  SolidWorksAddIn.cs
   FastApiClient.cs
-  RevitMeshBuilder.cs
-  PromptWindow.xaml
+  TaskpaneControl.cs
+  Models.cs
+  TextToModeling.SolidWorks.csproj
 clients/sketchup/
   text_to_modeling.rb
 clients/sketchup/text_to_modeling/
   main.rb
-clients/solidworks/
-clients/solidworks/TextToModeling.SolidWorks/
-  TaskpaneControl.cs
-  Models.cs
-  SolidWorksAddIn.cs
-  TextToModeling.SolidWorks.csproj
+clients/revit/
+clients/revit/TextToModeling.Revit/
+  TextToModeling.Revit.csproj
+  GenerateMeshCommand.cs
+  TextToModeling.addin
   FastApiClient.cs
+  PromptWindow.xaml
+  PromptWindow.xaml.cs
+  RevitMeshBuilder.cs
+  Models.cs
+examples/
+  cube-request.json
+  cylinder-request.json
+app/
+  generators.py
+  __init__.py
+  main.py
+  schemas.py
+scripts/
+  smoke_test.py
+scripts/automation/
+  generate_readme.py
+  ai_agent.py
+  analyze_repo.py
+  generate_diagrams.py
 ```
 
 <!-- AUTO-GENERATED-END -->
