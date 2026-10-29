@@ -427,36 +427,29 @@ mindmap
 
 ## Generated Repository Structure
 ```text
-repo_knowledge_graph.json
 .gitignore
 requirements.txt
 README.md
+repo_knowledge_graph.json
+app/
+  generators.py
+  main.py
+  schemas.py
+  __init__.py
 examples/
   cube-request.json
   cylinder-request.json
-app/
-  main.py
-  generators.py
-  schemas.py
-  __init__.py
-scripts/
-  smoke_test.py
-scripts/automation/
-  generate_diagrams.py
-  ai_agent.py
-  generate_readme.py
-  analyze_repo.py
 clients/
   README.md
 clients/revit/
 clients/revit/TextToModeling.Revit/
-  GenerateMeshCommand.cs
-  FastApiClient.cs
   PromptWindow.xaml.cs
-  TextToModeling.Revit.csproj
-  Models.cs
+  FastApiClient.cs
   RevitMeshBuilder.cs
+  GenerateMeshCommand.cs
   PromptWindow.xaml
+  Models.cs
+  TextToModeling.Revit.csproj
   TextToModeling.addin
 clients/sketchup/
   text_to_modeling.rb
@@ -465,10 +458,17 @@ clients/sketchup/text_to_modeling/
 clients/solidworks/
 clients/solidworks/TextToModeling.SolidWorks/
   FastApiClient.cs
-  SolidWorksAddIn.cs
-  TextToModeling.SolidWorks.csproj
-  Models.cs
   TaskpaneControl.cs
+  Models.cs
+  TextToModeling.SolidWorks.csproj
+  SolidWorksAddIn.cs
+scripts/
+  smoke_test.py
+scripts/automation/
+  generate_readme.py
+  ai_agent.py
+  analyze_repo.py
+  generate_diagrams.py
 ```
 
 <!-- AUTO-GENERATED-END -->
