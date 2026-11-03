@@ -384,9 +384,9 @@ graph TD
     User([User])
 
     subgraph Clients["Clients / Adapters"]
-        revit["Revit Plugin"]
-        sketchup["Sketchup Plugin"]
         solidworks["Solidworks Plugin"]
+        sketchup["Sketchup Plugin"]
+        revit["Revit Plugin"]
     end
 
     subgraph Services["Services"]
@@ -394,9 +394,9 @@ graph TD
     end
 
     User -->|Prompts| Clients
-    revit -->|HTTP POST| app
-    sketchup -->|HTTP POST| app
     solidworks -->|HTTP POST| app
+    sketchup -->|HTTP POST| app
+    revit -->|HTTP POST| app
 ```
 
 
@@ -411,11 +411,11 @@ mindmap
         pydantic
     Clients
       C#
-        RevitAPI
-        RevitAPIUI
-        System.Net.Http
         SolidWorks.Interop.sldworks
         SolidWorks.Interop.swconst
+        System.Net.Http
+        RevitAPI
+        RevitAPIUI
       Ruby
         SketchUp API
 ```
@@ -428,47 +428,47 @@ mindmap
 ## Generated Repository Structure
 ```text
 .gitignore
+repo_knowledge_graph.json
 requirements.txt
 README.md
-repo_knowledge_graph.json
 app/
-  generators.py
   main.py
   schemas.py
+  generators.py
   __init__.py
-examples/
-  cube-request.json
-  cylinder-request.json
 clients/
   README.md
-clients/revit/
-clients/revit/TextToModeling.Revit/
-  PromptWindow.xaml.cs
+clients/solidworks/
+clients/solidworks/TextToModeling.SolidWorks/
+  TaskpaneControl.cs
+  SolidWorksAddIn.cs
   FastApiClient.cs
-  RevitMeshBuilder.cs
-  GenerateMeshCommand.cs
-  PromptWindow.xaml
+  TextToModeling.SolidWorks.csproj
   Models.cs
-  TextToModeling.Revit.csproj
-  TextToModeling.addin
 clients/sketchup/
   text_to_modeling.rb
 clients/sketchup/text_to_modeling/
   main.rb
-clients/solidworks/
-clients/solidworks/TextToModeling.SolidWorks/
+clients/revit/
+clients/revit/TextToModeling.Revit/
+  GenerateMeshCommand.cs
+  PromptWindow.xaml.cs
+  TextToModeling.addin
+  PromptWindow.xaml
   FastApiClient.cs
-  TaskpaneControl.cs
+  TextToModeling.Revit.csproj
+  RevitMeshBuilder.cs
   Models.cs
-  TextToModeling.SolidWorks.csproj
-  SolidWorksAddIn.cs
 scripts/
   smoke_test.py
 scripts/automation/
-  generate_readme.py
   ai_agent.py
   analyze_repo.py
+  generate_readme.py
   generate_diagrams.py
+examples/
+  cylinder-request.json
+  cube-request.json
 ```
 
 <!-- AUTO-GENERATED-END -->

@@ -15,11 +15,11 @@
       "pydantic"
     ],
     "csharp": [
-      "RevitAPI",
-      "RevitAPIUI",
-      "System.Net.Http",
       "SolidWorks.Interop.sldworks",
-      "SolidWorks.Interop.swconst"
+      "SolidWorks.Interop.swconst",
+      "System.Net.Http",
+      "RevitAPI",
+      "RevitAPIUI"
     ],
     "ruby": []
   },
@@ -27,40 +27,33 @@
     "app"
   ],
   "clients": [
-    "revit",
+    "solidworks",
     "sketchup",
-    "solidworks"
+    "revit"
   ],
   "directories": {
     "/": [
       ".gitignore",
+      "repo_knowledge_graph.json",
       "requirements.txt",
-      "README.md",
-      "repo_knowledge_graph.json"
+      "README.md"
     ],
     "app": [
-      "generators.py",
       "main.py",
       "schemas.py",
+      "generators.py",
       "__init__.py"
-    ],
-    "examples": [
-      "cube-request.json",
-      "cylinder-request.json"
     ],
     "clients": [
       "README.md"
     ],
-    "clients/revit": [],
-    "clients/revit/TextToModeling.Revit": [
-      "PromptWindow.xaml.cs",
+    "clients/solidworks": [],
+    "clients/solidworks/TextToModeling.SolidWorks": [
+      "TaskpaneControl.cs",
+      "SolidWorksAddIn.cs",
       "FastApiClient.cs",
-      "RevitMeshBuilder.cs",
-      "GenerateMeshCommand.cs",
-      "PromptWindow.xaml",
-      "Models.cs",
-      "TextToModeling.Revit.csproj",
-      "TextToModeling.addin"
+      "TextToModeling.SolidWorks.csproj",
+      "Models.cs"
     ],
     "clients/sketchup": [
       "text_to_modeling.rb"
@@ -68,22 +61,29 @@
     "clients/sketchup/text_to_modeling": [
       "main.rb"
     ],
-    "clients/solidworks": [],
-    "clients/solidworks/TextToModeling.SolidWorks": [
+    "clients/revit": [],
+    "clients/revit/TextToModeling.Revit": [
+      "GenerateMeshCommand.cs",
+      "PromptWindow.xaml.cs",
+      "TextToModeling.addin",
+      "PromptWindow.xaml",
       "FastApiClient.cs",
-      "TaskpaneControl.cs",
-      "Models.cs",
-      "TextToModeling.SolidWorks.csproj",
-      "SolidWorksAddIn.cs"
+      "TextToModeling.Revit.csproj",
+      "RevitMeshBuilder.cs",
+      "Models.cs"
     ],
     "scripts": [
       "smoke_test.py"
     ],
     "scripts/automation": [
-      "generate_readme.py",
       "ai_agent.py",
       "analyze_repo.py",
+      "generate_readme.py",
       "generate_diagrams.py"
+    ],
+    "examples": [
+      "cylinder-request.json",
+      "cube-request.json"
     ]
   }
 }
