@@ -385,8 +385,8 @@ graph TD
 
     subgraph Clients["Clients / Adapters"]
         solidworks["Solidworks Plugin"]
-        sketchup["Sketchup Plugin"]
         revit["Revit Plugin"]
+        sketchup["Sketchup Plugin"]
     end
 
     subgraph Services["Services"]
@@ -395,8 +395,8 @@ graph TD
 
     User -->|Prompts| Clients
     solidworks -->|HTTP POST| app
-    sketchup -->|HTTP POST| app
     revit -->|HTTP POST| app
+    sketchup -->|HTTP POST| app
 ```
 
 
@@ -427,48 +427,48 @@ mindmap
 
 ## Generated Repository Structure
 ```text
-.gitignore
-repo_knowledge_graph.json
 requirements.txt
 README.md
-app/
-  main.py
-  schemas.py
-  generators.py
-  __init__.py
-clients/
-  README.md
-clients/solidworks/
-clients/solidworks/TextToModeling.SolidWorks/
-  TaskpaneControl.cs
-  SolidWorksAddIn.cs
-  FastApiClient.cs
-  TextToModeling.SolidWorks.csproj
-  Models.cs
-clients/sketchup/
-  text_to_modeling.rb
-clients/sketchup/text_to_modeling/
-  main.rb
-clients/revit/
-clients/revit/TextToModeling.Revit/
-  GenerateMeshCommand.cs
-  PromptWindow.xaml.cs
-  TextToModeling.addin
-  PromptWindow.xaml
-  FastApiClient.cs
-  TextToModeling.Revit.csproj
-  RevitMeshBuilder.cs
-  Models.cs
+repo_knowledge_graph.json
+.gitignore
 scripts/
   smoke_test.py
 scripts/automation/
   ai_agent.py
   analyze_repo.py
-  generate_readme.py
   generate_diagrams.py
+  generate_readme.py
 examples/
   cylinder-request.json
   cube-request.json
+app/
+  generators.py
+  schemas.py
+  main.py
+  __init__.py
+clients/
+  README.md
+clients/solidworks/
+clients/solidworks/TextToModeling.SolidWorks/
+  Models.cs
+  SolidWorksAddIn.cs
+  FastApiClient.cs
+  TextToModeling.SolidWorks.csproj
+  TaskpaneControl.cs
+clients/revit/
+clients/revit/TextToModeling.Revit/
+  PromptWindow.xaml
+  Models.cs
+  GenerateMeshCommand.cs
+  TextToModeling.Revit.csproj
+  PromptWindow.xaml.cs
+  FastApiClient.cs
+  RevitMeshBuilder.cs
+  TextToModeling.addin
+clients/sketchup/
+  text_to_modeling.rb
+clients/sketchup/text_to_modeling/
+  main.rb
 ```
 
 <!-- AUTO-GENERATED-END -->

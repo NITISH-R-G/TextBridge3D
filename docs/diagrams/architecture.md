@@ -4,8 +4,8 @@ graph TD
 
     subgraph Clients["Clients / Adapters"]
         solidworks["Solidworks Plugin"]
-        sketchup["Sketchup Plugin"]
         revit["Revit Plugin"]
+        sketchup["Sketchup Plugin"]
     end
 
     subgraph Services["Services"]
@@ -14,6 +14,6 @@ graph TD
 
     User -->|Prompts| Clients
     solidworks -->|HTTP POST| app
-    sketchup -->|HTTP POST| app
     revit -->|HTTP POST| app
+    sketchup -->|HTTP POST| app
 ```
