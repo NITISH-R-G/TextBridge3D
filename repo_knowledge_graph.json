@@ -28,62 +28,62 @@
   ],
   "clients": [
     "solidworks",
-    "revit",
-    "sketchup"
+    "sketchup",
+    "revit"
   ],
   "directories": {
     "/": [
       "requirements.txt",
-      "README.md",
+      ".gitignore",
       "repo_knowledge_graph.json",
-      ".gitignore"
+      "README.md"
     ],
-    "scripts": [
-      "smoke_test.py"
-    ],
-    "scripts/automation": [
-      "ai_agent.py",
-      "analyze_repo.py",
-      "generate_diagrams.py",
-      "generate_readme.py"
+    "app": [
+      "schemas.py",
+      "generators.py",
+      "__init__.py",
+      "main.py"
     ],
     "examples": [
       "cylinder-request.json",
       "cube-request.json"
     ],
-    "app": [
-      "generators.py",
-      "schemas.py",
-      "main.py",
-      "__init__.py"
+    "scripts": [
+      "smoke_test.py"
+    ],
+    "scripts/automation": [
+      "generate_diagrams.py",
+      "analyze_repo.py",
+      "generate_readme.py",
+      "ai_agent.py"
     ],
     "clients": [
       "README.md"
     ],
     "clients/solidworks": [],
     "clients/solidworks/TextToModeling.SolidWorks": [
-      "Models.cs",
+      "FastApiClient.cs",
       "SolidWorksAddIn.cs",
-      "FastApiClient.cs",
       "TextToModeling.SolidWorks.csproj",
-      "TaskpaneControl.cs"
-    ],
-    "clients/revit": [],
-    "clients/revit/TextToModeling.Revit": [
-      "PromptWindow.xaml",
-      "Models.cs",
-      "GenerateMeshCommand.cs",
-      "TextToModeling.Revit.csproj",
-      "PromptWindow.xaml.cs",
-      "FastApiClient.cs",
-      "RevitMeshBuilder.cs",
-      "TextToModeling.addin"
+      "TaskpaneControl.cs",
+      "Models.cs"
     ],
     "clients/sketchup": [
       "text_to_modeling.rb"
     ],
     "clients/sketchup/text_to_modeling": [
       "main.rb"
+    ],
+    "clients/revit": [],
+    "clients/revit/TextToModeling.Revit": [
+      "FastApiClient.cs",
+      "PromptWindow.xaml",
+      "RevitMeshBuilder.cs",
+      "GenerateMeshCommand.cs",
+      "TextToModeling.addin",
+      "PromptWindow.xaml.cs",
+      "TextToModeling.Revit.csproj",
+      "Models.cs"
     ]
   }
 }

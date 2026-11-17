@@ -385,8 +385,8 @@ graph TD
 
     subgraph Clients["Clients / Adapters"]
         solidworks["Solidworks Plugin"]
-        revit["Revit Plugin"]
         sketchup["Sketchup Plugin"]
+        revit["Revit Plugin"]
     end
 
     subgraph Services["Services"]
@@ -395,8 +395,8 @@ graph TD
 
     User -->|Prompts| Clients
     solidworks -->|HTTP POST| app
-    revit -->|HTTP POST| app
     sketchup -->|HTTP POST| app
+    revit -->|HTTP POST| app
 ```
 
 
@@ -428,47 +428,47 @@ mindmap
 ## Generated Repository Structure
 ```text
 requirements.txt
-README.md
-repo_knowledge_graph.json
 .gitignore
-scripts/
-  smoke_test.py
-scripts/automation/
-  ai_agent.py
-  analyze_repo.py
-  generate_diagrams.py
-  generate_readme.py
+repo_knowledge_graph.json
+README.md
+app/
+  schemas.py
+  generators.py
+  __init__.py
+  main.py
 examples/
   cylinder-request.json
   cube-request.json
-app/
-  generators.py
-  schemas.py
-  main.py
-  __init__.py
+scripts/
+  smoke_test.py
+scripts/automation/
+  generate_diagrams.py
+  analyze_repo.py
+  generate_readme.py
+  ai_agent.py
 clients/
   README.md
 clients/solidworks/
 clients/solidworks/TextToModeling.SolidWorks/
-  Models.cs
-  SolidWorksAddIn.cs
   FastApiClient.cs
+  SolidWorksAddIn.cs
   TextToModeling.SolidWorks.csproj
   TaskpaneControl.cs
-clients/revit/
-clients/revit/TextToModeling.Revit/
-  PromptWindow.xaml
   Models.cs
-  GenerateMeshCommand.cs
-  TextToModeling.Revit.csproj
-  PromptWindow.xaml.cs
-  FastApiClient.cs
-  RevitMeshBuilder.cs
-  TextToModeling.addin
 clients/sketchup/
   text_to_modeling.rb
 clients/sketchup/text_to_modeling/
   main.rb
+clients/revit/
+clients/revit/TextToModeling.Revit/
+  FastApiClient.cs
+  PromptWindow.xaml
+  RevitMeshBuilder.cs
+  GenerateMeshCommand.cs
+  TextToModeling.addin
+  PromptWindow.xaml.cs
+  TextToModeling.Revit.csproj
+  Models.cs
 ```
 
 <!-- AUTO-GENERATED-END -->
