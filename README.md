@@ -384,8 +384,8 @@ graph TD
     User([User])
 
     subgraph Clients["Clients / Adapters"]
-        solidworks["Solidworks Plugin"]
         revit["Revit Plugin"]
+        solidworks["Solidworks Plugin"]
         sketchup["Sketchup Plugin"]
     end
 
@@ -394,8 +394,8 @@ graph TD
     end
 
     User -->|Prompts| Clients
-    solidworks -->|HTTP POST| app
     revit -->|HTTP POST| app
+    solidworks -->|HTTP POST| app
     sketchup -->|HTTP POST| app
 ```
 
@@ -411,11 +411,11 @@ mindmap
         pydantic
     Clients
       C#
-        SolidWorks.Interop.sldworks
-        SolidWorks.Interop.swconst
-        System.Net.Http
         RevitAPI
         RevitAPIUI
+        System.Net.Http
+        SolidWorks.Interop.sldworks
+        SolidWorks.Interop.swconst
       Ruby
         SketchUp API
 ```
@@ -428,47 +428,47 @@ mindmap
 ## Generated Repository Structure
 ```text
 requirements.txt
-README.md
 repo_knowledge_graph.json
+README.md
 .gitignore
 scripts/
   smoke_test.py
 scripts/automation/
   ai_agent.py
+  generate_readme.py
   analyze_repo.py
   generate_diagrams.py
-  generate_readme.py
 examples/
-  cylinder-request.json
   cube-request.json
-app/
-  generators.py
-  schemas.py
-  main.py
-  __init__.py
+  cylinder-request.json
 clients/
   README.md
-clients/solidworks/
-clients/solidworks/TextToModeling.SolidWorks/
-  Models.cs
-  SolidWorksAddIn.cs
-  FastApiClient.cs
-  TextToModeling.SolidWorks.csproj
-  TaskpaneControl.cs
 clients/revit/
 clients/revit/TextToModeling.Revit/
+  TextToModeling.addin
   PromptWindow.xaml
   Models.cs
-  GenerateMeshCommand.cs
-  TextToModeling.Revit.csproj
+  RevitMeshBuilder.cs
   PromptWindow.xaml.cs
   FastApiClient.cs
-  RevitMeshBuilder.cs
-  TextToModeling.addin
+  TextToModeling.Revit.csproj
+  GenerateMeshCommand.cs
+clients/solidworks/
+clients/solidworks/TextToModeling.SolidWorks/
+  SolidWorksAddIn.cs
+  TaskpaneControl.cs
+  Models.cs
+  FastApiClient.cs
+  TextToModeling.SolidWorks.csproj
 clients/sketchup/
   text_to_modeling.rb
 clients/sketchup/text_to_modeling/
   main.rb
+app/
+  __init__.py
+  schemas.py
+  generators.py
+  main.py
 ```
 
 <!-- AUTO-GENERATED-END -->
