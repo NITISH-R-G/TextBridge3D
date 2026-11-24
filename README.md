@@ -384,9 +384,9 @@ graph TD
     User([User])
 
     subgraph Clients["Clients / Adapters"]
-        revit["Revit Plugin"]
         solidworks["Solidworks Plugin"]
         sketchup["Sketchup Plugin"]
+        revit["Revit Plugin"]
     end
 
     subgraph Services["Services"]
@@ -394,9 +394,9 @@ graph TD
     end
 
     User -->|Prompts| Clients
-    revit -->|HTTP POST| app
     solidworks -->|HTTP POST| app
     sketchup -->|HTTP POST| app
+    revit -->|HTTP POST| app
 ```
 
 
@@ -411,11 +411,11 @@ mindmap
         pydantic
     Clients
       C#
-        RevitAPI
-        RevitAPIUI
-        System.Net.Http
         SolidWorks.Interop.sldworks
         SolidWorks.Interop.swconst
+        System.Net.Http
+        RevitAPI
+        RevitAPIUI
       Ruby
         SketchUp API
 ```
@@ -428,47 +428,47 @@ mindmap
 ## Generated Repository Structure
 ```text
 requirements.txt
+.gitignore
 repo_knowledge_graph.json
 README.md
-.gitignore
+app/
+  schemas.py
+  generators.py
+  __init__.py
+  main.py
+examples/
+  cylinder-request.json
+  cube-request.json
 scripts/
   smoke_test.py
 scripts/automation/
-  ai_agent.py
-  generate_readme.py
-  analyze_repo.py
   generate_diagrams.py
-examples/
-  cube-request.json
-  cylinder-request.json
+  analyze_repo.py
+  generate_readme.py
+  ai_agent.py
 clients/
   README.md
-clients/revit/
-clients/revit/TextToModeling.Revit/
-  TextToModeling.addin
-  PromptWindow.xaml
-  Models.cs
-  RevitMeshBuilder.cs
-  PromptWindow.xaml.cs
-  FastApiClient.cs
-  TextToModeling.Revit.csproj
-  GenerateMeshCommand.cs
 clients/solidworks/
 clients/solidworks/TextToModeling.SolidWorks/
+  FastApiClient.cs
   SolidWorksAddIn.cs
+  TextToModeling.SolidWorks.csproj
   TaskpaneControl.cs
   Models.cs
-  FastApiClient.cs
-  TextToModeling.SolidWorks.csproj
 clients/sketchup/
   text_to_modeling.rb
 clients/sketchup/text_to_modeling/
   main.rb
-app/
-  __init__.py
-  schemas.py
-  generators.py
-  main.py
+clients/revit/
+clients/revit/TextToModeling.Revit/
+  FastApiClient.cs
+  PromptWindow.xaml
+  RevitMeshBuilder.cs
+  GenerateMeshCommand.cs
+  TextToModeling.addin
+  PromptWindow.xaml.cs
+  TextToModeling.Revit.csproj
+  Models.cs
 ```
 
 <!-- AUTO-GENERATED-END -->
